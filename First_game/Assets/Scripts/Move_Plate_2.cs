@@ -6,8 +6,8 @@ public class Move_Plate_2 : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed = 2f;
-    private Vector3 moveVector = new Vector3(0, 0, 100);
-    public GameObject plate1 = new GameObject();
+    public Vector3 moveVector;
+    public GameObject plate1;
     // Start is called before the first frame update
     //void Start()
     //{
@@ -19,10 +19,11 @@ public class Move_Plate_2 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        moveVector.z = -2;
-        rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
+        moveVector.z = -4;
+        //rb.MovePosition(transform.position + speed * Time.deltaTime * Vector3.back);
+        transform.position += speed * Time.deltaTime * Vector3.back;
         if (transform.position.z <= -4)
         {
             Vector3 mV = new Vector3(0, 0, 24);

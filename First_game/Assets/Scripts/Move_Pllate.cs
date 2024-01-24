@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Rigidbody rb;
     public float speed = 2f;
     private Vector3 moveVector = new Vector3(0,0,100);
-    public GameObject plate2 = new GameObject();
+    public GameObject plate2;
     // Start is called before the first frame update
     //void Start()
     //{
